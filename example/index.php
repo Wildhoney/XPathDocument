@@ -30,7 +30,7 @@ $posts      = $xpath->query($postsSelector);
                     <?php echo $post->getText(); ?>
                 </a>
             </div>
-            <em class="comments" style="color: #666;">
+            <em class="comments" style="color: 666;">
                 <?php echo $post->query($commentSelector)->offsetGet(0)->getText(); ?>
             </em>
         </li>
