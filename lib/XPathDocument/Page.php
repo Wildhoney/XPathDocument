@@ -16,6 +16,14 @@ class XPathDocument_Page
     private $_dom;
 
     /**
+     * @property $_content
+     * @type string
+     * Content of the HTML page.
+     * @private
+     */
+    private $_content;
+
+    /**
      * @property $_contentType
      * @type string
      * Stores the content type (HTML/XML) so that when the query() is called again,
