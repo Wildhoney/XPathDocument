@@ -7,38 +7,38 @@
  */
 class XPathDocument_Dom_List implements Iterator, ArrayAccess, Countable
 {
-	/**
+    /**
      * @property $_position
      * @type integer
-	 * Keeps a track of the current position in the array.
+     * Keeps a track of the current position in the array.
      * @private
-	 */
-	private $_position = 0;
-	
-	/**
+     */
+    private $_position = 0;
+
+    /**
      * @property $_list
      * @type array
-	 * Contains a list of the items.
+     * Contains a list of the items.
      * @private
-	 */
-	private $_list = array();
-	
-	/**
+     */
+    private $_list = array();
+
+    /**
      * @method add
      * @param mixed $item
-	 * Inject an item into the array.
+     * Inject an item into the array.
      * @return void
-	 */
-	public function add($item)
-	{
-		$this->_list[] = $item;
-	}
+     */
+    public function add($item)
+    {
+        $this->_list[] = $item;
+    }
 
-	/**
+    /**
      * @method rewind
-	 * Reset to the beginning of the array.
-	 * @return void
-	 */
+     * Reset to the beginning of the array.
+     * @return void
+     */
     public function rewind()
     {
         $this->_position = 0;
@@ -90,56 +90,56 @@ class XPathDocument_Dom_List implements Iterator, ArrayAccess, Countable
      * Check whether an offset exists.
      * @return boolean
      */
-	public function offsetExists($index)
-	{
-		return (bool) array_key_exists($index, $this->_list);
-	}
+    public function offsetExists($index)
+    {
+        return (bool) array_key_exists($index, $this->_list);
+    }
 
-	/**
+    /**
      * @method offsetGet
      * @param integer $index
-	 * Get the value at a particular offset.
-	 * @return mixed
-	 */
-	public function offsetGet($index)
-	{
-		return $this->_list[$index];
-	}
+     * Get the value at a particular offset.
+     * @return mixed
+     */
+    public function offsetGet($index)
+    {
+        return $this->_list[$index];
+    }
 
-	/**
+    /**
      * @method offsetSet
      * @param integer $index
      * @param string $value
-	 * Set the value at a particular offset.
-	 * @return XPathDocument_Dom__List
-	 */
-	public function offsetSet($index, $value)
-	{
-		$this->_list[$index] = $value;
-		return $this;
-	}
+     * Set the value at a particular offset.
+     * @return XPathDocument_Dom__List
+     */
+    public function offsetSet($index, $value)
+    {
+        $this->_list[$index] = $value;
+        return $this;
+    }
 
-	/**
+    /**
      * @method offsetUnset
      * @param integer $index
-	 * Unset an the specified index.
-	 * @return XPathDocument_Dom_List
-	 */
-	public function offsetUnset($index)
-	{
-		unset($this->_list[$index]);
-		return $this;
-	}
+     * Unset an the specified index.
+     * @return XPathDocument_Dom_List
+     */
+    public function offsetUnset($index)
+    {
+        unset($this->_list[$index]);
+        return $this;
+    }
 
-	/**
+    /**
      * @method count
-	 * Count the items in the list.
-	 * @return integer
-	 */
-	public function count()
-	{
-		return count($this->_list);
-	}
+     * Count the items in the list.
+     * @return integer
+     */
+    public function count()
+    {
+        return count($this->_list);
+    }
 
     /**
      * @method toArray

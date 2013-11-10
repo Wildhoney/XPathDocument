@@ -14,7 +14,7 @@ class XPathDocument_Page
      * @private
      */
     private $_dom;
-    
+
     /**
      * @property $_contentType
      * @type string
@@ -23,7 +23,7 @@ class XPathDocument_Page
      * @private
      */
     private $_contentType;
-    
+
     /**
      * @property $_docType
      * @type string
@@ -33,7 +33,7 @@ class XPathDocument_Page
      * @private
      */
     private $_docType;
-    
+
     /**
      * @constructor
      * Place the HTML into the DOMDocument class.
@@ -42,52 +42,52 @@ class XPathDocument_Page
      */
     public function __construct($content, $type = 'html')
     {
-		$this->_dom         = new DOMDocument();
-		$this->_content     = $content;
-		$this->_contentType = $type;
-		
-		// Switch the type so that we can load the content in different ways.
-		switch ($type)
-		{
-			// Load a HTML document.
-			case ('html'):
-				@$this->_dom->loadHtml(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
-				break;
-				
-			// Load an XML document.
-			case ('xml'):
-				@$this->_dom->loadXML($content);
-				break;
-		}
-		
-		// Try and get the DOCTYPE from the content that was passed in, and store it in the
-		// member variable if it can be gathered.
-		if (preg_match('~(<!DOCTYPE .+?">)~i', $content, $matches))
-		{
-			$this->_docType = $matches[1];
-		}
-	}
-	
-	/**
+        $this->_dom         = new DOMDocument();
+        $this->_content     = $content;
+        $this->_contentType = $type;
+
+        // Switch the type so that we can load the content in different ways.
+        switch ($type)
+        {
+            // Load a HTML document.
+            case ('html'):
+                @$this->_dom->loadHtml(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
+                break;
+
+            // Load an XML document.
+            case ('xml'):
+                @$this->_dom->loadXML($content);
+                break;
+        }
+
+        // Try and get the DOCTYPE from the content that was passed in, and store it in the
+        // member variable if it can be gathered.
+        if (preg_match('~(<!DOCTYPE .+?">)~i', $content, $matches))
+        {
+            $this->_docType = $matches[1];
+        }
+    }
+
+    /**
      * @method query
-	 * @param string $expression
-	 * @param DOMElement $context
+     * @param string $expression
+     * @param DOMElement $context
      * Perform an XPath query on the current DOMDocument.
      * @throws Exception
-	 * @return XPathDocument_Dom_List
-	 */
-	public function query($expression, DOMElement $context = null)
-	{
-		// Find the nodes based on the expression that was passed in.
-		$xpath 		= new DOMXPath($this->_dom);
+     * @return XPathDocument_Dom_List
+     */
+    public function query($expression, DOMElement $context = null)
+    {
+        // Find the nodes based on the expression that was passed in.
+        $xpath 		= new DOMXPath($this->_dom);
         $nodes      = @$xpath->query($expression);
 
         if (!$nodes) {
             throw new Exception(sprintf('Invalid expression: "%s"', $expression));
         }
 
-		// Package all of the obtained nodes into their XPathDocument equivalents.
-		$package = new XPathDocument_Dom_Package($nodes, $this->_dom);
-		return $package->getItems();
-	}
+        // Package all of the obtained nodes into their XPathDocument equivalents.
+        $package = new XPathDocument_Dom_Package($nodes, $this->_dom);
+        return $package->getItems();
+    }
 }

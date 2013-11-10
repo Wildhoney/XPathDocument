@@ -7,12 +7,12 @@
  */
 class XPathDocument_Dom_Text extends XPathDocument_Dom_Abstract
 {
-	/**
+    /**
      * @method getText
-	 * @return string
-	 */
-	public function getText()
-	{
-		return $this->_item->wholeText;
-	}
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->_item->wholeText;
+    }
 }
