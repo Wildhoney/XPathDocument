@@ -1,7 +1,7 @@
 <?php
 
-include_once './../../lib/XPathDocument/Dom/Abstract.php';
-include_once './../../lib/XPathDocument/Dom/Attr.php';
+include_once 'lib/XPathDocument/Dom/Abstract.php';
+include_once 'lib/XPathDocument/Dom/Attr.php';
 
 class XPathDocument_AttrTest extends PHPUnit_Framework_TestCase
 {
@@ -9,7 +9,7 @@ class XPathDocument_AttrTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $fixture        = file_get_contents('./../RedditFixture.html');
+        $fixture        = file_get_contents('tests/RedditFixture.html');
         $dom            = new DOMDocument();
         @$dom->loadHTML($fixture);
         $this->_xpath   = new DOMXPath($dom);

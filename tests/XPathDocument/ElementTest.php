@@ -1,18 +1,18 @@
 <?php
 
-include_once './../../lib/XPathDocument/Dom/Abstract.php';
-include_once './../../lib/XPathDocument/Dom/Element.php';
-include_once './../../lib/XPathDocument/Dom/Package.php';
-include_once './../../lib/XPathDocument/Dom/List.php';
+include_once 'lib/XPathDocument/Dom/Abstract.php';
+include_once 'lib/XPathDocument/Dom/Element.php';
+include_once 'lib/XPathDocument/Dom/Package.php';
+include_once 'lib/XPathDocument/Dom/List.php';
 
-class XPathDocument_TextTest extends PHPUnit_Framework_TestCase
+class XPathDocument_ElementTest extends PHPUnit_Framework_TestCase
 {
     private $_xpath;
     private $_dom;
 
     public function setUp()
     {
-        $fixture        = file_get_contents('./../RedditFixture.html');
+        $fixture        = file_get_contents('tests/RedditFixture.html');
         $this->_dom     = new DOMDocument();
         @$this->_dom->loadHTML($fixture);
         $this->_xpath   = new DOMXPath($this->_dom);

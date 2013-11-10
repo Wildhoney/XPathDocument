@@ -1,10 +1,10 @@
 <?php
 
-include_once './../../lib/XPathDocument/Page.php';
-include_once './../../lib/XPathDocument/Dom/Abstract.php';
-include_once './../../lib/XPathDocument/Dom/Package.php';
-include_once './../../lib/XPathDocument/Dom/List.php';
-include_once './../../lib/XPathDocument/Dom/Element.php';
+include_once 'lib/XPathDocument/Page.php';
+include_once 'lib/XPathDocument/Dom/Abstract.php';
+include_once 'lib/XPathDocument/Dom/Package.php';
+include_once 'lib/XPathDocument/Dom/List.php';
+include_once 'lib/XPathDocument/Dom/Element.php';
 
 class XPathDocument_PageTest extends PHPUnit_Framework_TestCase
 {
@@ -13,7 +13,7 @@ class XPathDocument_PageTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $fixture            = file_get_contents('./../RedditFixture.html');
+        $fixture            = file_get_contents('tests/RedditFixture.html');
         $this->_class       = new ReflectionClass('XPathDocument_Page');
         $this->_instance    = $this->_class->newInstanceArgs(array($fixture, 'html'));
     }
