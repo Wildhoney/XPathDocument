@@ -1,0 +1,13 @@
+{
+    "name": "Wildhoney/x-path-document",
+    "description": "Friendlier XPath extension of DOMDocument for those fluent in beloved XPath!",
+    "authors": [
+        {
+            "name": "Adam Timberlake",
+            "email": "adam.timberlake@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}
