@@ -53,15 +53,15 @@ class XPathDocument_Dom_Element extends XPathDocument_Dom_Abstract
      */
     public function query($expression)
     {
-        # Any child XPath expressions mustn't be prepended with "//", but it's a common mistake, so
-        # remove them.
+        // Any child XPath expressions mustn't be prepended with "//", but it's a common mistake, so
+        // remove them.
         $expression = str_replace('//', '', $expression);
 
-        # Find the nodes based on the expression that was passed in.
+        // Find the nodes based on the expression that was passed in.
         $xpath 		= new DOMXPath($this->_dom);
         $nodes		= $xpath->query($expression, $this->_item);
 
-        # Package all of the obtained nodes into their XPathDocument_Dom equivalents.
+        // Package all of the obtained nodes into their XPathDocument_Dom equivalents.
         $package = new XPathDocument_Dom_Package($nodes, $this->_dom);
         return $package->getItems();
     }

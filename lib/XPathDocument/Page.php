@@ -78,7 +78,8 @@ class XPathDocument_Page
 
     /**
      * @method query
-     * @param string $expression
+     * @param str
+     * ing $expression
      * @param DOMElement $context
      * Perform an XPath query on the current DOMDocument.
      * @throws Exception

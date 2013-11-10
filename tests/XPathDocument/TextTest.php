@@ -15,7 +15,7 @@ class XPathDocument_TextTest extends PHPUnit_Framework_TestCase
         $this->_xpath   = new DOMXPath($dom);
     }
 
-    public function testCanGetAttributeText()
+    public function testCanGetTextValue()
     {
         $firstNode  = $this->_xpath->query('//p[@class="title"]/a/text()')->item(0);
         $attribute  = new XPathDocument_Dom_Text($firstNode);
