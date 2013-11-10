@@ -9,10 +9,10 @@ Getting Started
 XPathDocument allows you to chain your `query` methods, allowing you to delve deeper into the DOM hierarchy with each iteration.
 
 ```php
-$posts = $xpathDocument->query('//div[@class="posts"]);
+$posts = $xpathDocument->query('//div[@class="posts"]');
 
 foreach ($posts as $post) {
-    $comments = $post->query('div[@class="comments]");
+    $comments = $post->query('div[@class="comments"]');
 }
 ```
 
