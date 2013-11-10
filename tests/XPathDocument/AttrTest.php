@@ -3,7 +3,7 @@
 include_once './../../lib/XPathDocument/Dom/Abstract.php';
 include_once './../../lib/XPathDocument/Dom/Attr.php';
 
-class XPathDocument_PageTest extends PHPUnit_Framework_TestCase
+class XPathDocument_AttrTest extends PHPUnit_Framework_TestCase
 {
     private $_xpath;
 
