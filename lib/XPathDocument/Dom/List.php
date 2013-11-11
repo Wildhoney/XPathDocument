@@ -111,7 +111,7 @@ class XPathDocument_Dom_List implements Iterator, ArrayAccess, Countable
      * @param integer $index
      * @param string $value
      * Set the value at a particular offset.
-     * @return XPathDocument_Dom__List
+     * @return XPathDocument_Dom_List
      */
     public function offsetSet($index, $value)
     {
