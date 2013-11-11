@@ -16,9 +16,9 @@ foreach ($posts as $post) {
 }
 ```
 
-<img src="http://i.imgur.com/OMONEcQ.png" />
-
 Each `query` will return an instance of `XPathDocument_Dom_List` &ndash; and this class implements `Iterator`, `ArrayAccess` and `Countable`, which gives you lots of useful methods for manipulating the node collection.
+
+<img src="http://i.imgur.com/OMONEcQ.png" />
 
 Typically `XPathDocument_Dom_List` will hold a collection of `XPathDocument_Dom_Element` instances &ndash; but other instances are possible:
 
