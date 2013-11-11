@@ -79,13 +79,12 @@ class XPathDocument_Page
     /**
      * @method query
      * @param str
-     * ing $expression
-     * @param DOMElement $context
+     * @param string $expression
      * Perform an XPath query on the current DOMDocument.
      * @throws Exception
      * @return XPathDocument_Dom_List
      */
-    public function query($expression, DOMElement $context = null)
+    public function query($expression)
     {
         // Find the nodes based on the expression that was passed in.
         $xpath 		= new DOMXPath($this->_dom);

@@ -1,5 +1,5 @@
 {
-    "name": "Wildhoney/x-path-document",
+    "name": "wildhoney/xpath-document",
     "description": "Friendlier XPath extension of DOMDocument for those fluent in beloved XPath!",
     "authors": [
         {
