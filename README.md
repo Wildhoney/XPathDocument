@@ -3,6 +3,8 @@ XPathDocument
 
 <img src="https://travis-ci.org/Wildhoney/Banter.js.png?branch=master" />
 
+**Bower:** `bower install wildhoney/xpath-document`
+
 Getting Started
 -------------
 
